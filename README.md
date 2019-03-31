@@ -2,9 +2,10 @@
 
 App para o Clube do Livro - Colégio Monte Alto
 
-Sugestão inicial
+# Sugestão inicial:
 
 Back end: NodeJS + MongoDB
+
 Front end: Ionic 3
 
 Hospedagem: Azure
