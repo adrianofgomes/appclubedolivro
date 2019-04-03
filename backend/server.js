@@ -137,7 +137,7 @@ app.get('/carregarLivros', function (req, res) {
     if(err){
       res.send('{erro ao inserir livros}');
     }
-    res.send('{livros incluídos com sucesso: ' + insertedCount + '}');
+    res.send('{livros incluídos com sucesso: ' + r.insertedCount + '}');
   });
 });
 
