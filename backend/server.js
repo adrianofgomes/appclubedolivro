@@ -116,6 +116,7 @@ app.get('/test', function (req, res) {
 var livros = require('./livro/livro.json');
 
 //Se a coleção de livros estiver vazia, carregar livros a partir do json
+console.log('Inicialização: verificando se precisar carregar lista de livros...');
 if(db){
   var colecaoLivros = db.collection('livros');
   colecaoLivros.count(function(err, count){
@@ -126,17 +127,22 @@ if(db){
         }
         console.log('livros incluídos com sucesso: ' + r.insertedCount);
       });
+    } else {
+      console.log('coleção de livros já está carregada. não foi realizada nova carga de livros.')
     }
   });
 }
 
 app.get('/carregarLivros', function (req, res) {
-  console.log('tentando carregar livros...');
+  console.log('[GET /carregarLivros] tentando carregar livros...');
   var colecaoLivros = db.collection('livros');
   colecaoLivros.insertMany(livros, function(err, r){
     if(err){
-      res.send('{erro ao inserir livros}');
+      console.log('[GET /carregarLivros] erro ao inserir livros ');
+      console.log(err)
+      res.send('{erro ao inserir livros' + err + '}');
     }
+    console.log('[GET /carregarLivros] livros incluídos com sucesso: ' + r.insertedCount);
     res.send('{livros incluídos com sucesso: ' + r.insertedCount + '}');
   });
 });
