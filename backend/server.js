@@ -120,7 +120,12 @@ if(db){
   var colecaoLivros = db.collection('livros');
   colecaoLivros.count(function(err, count){
     if(count === 0){
-      colecaoLivros.insert(livros);
+      colecaoLivros.insertMany(livros, function(err, r){
+        if(err){
+          console.log('erro ao inserir livros');
+        }
+        console.log('livros incluídos com sucesso: ' + r.insertedCount);
+      });
     }
   });
 }
@@ -128,7 +133,12 @@ if(db){
 app.get('/carregarLivros', function (req, res) {
   console.log('tentando carregar livros...');
   var colecaoLivros = db.collection('livros');
-  colecaoLivros.insert(livros);
+  colecaoLivros.insertMany(livros, function(err, r){
+    if(err){
+      res.send('{erro ao inserir livros}');
+    }
+    res.send('{livros incluídos com sucesso: ' + insertedCount + '}');
+  });
 });
 
 
