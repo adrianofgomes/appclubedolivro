@@ -73,8 +73,6 @@ var initDb = function(callback) {
   });
 };
 
-require('./livro/livro');
-
 app.get('/', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
@@ -116,6 +114,16 @@ app.get('/test', function (req, res) {
 });
 
 var livros = require('./livro/livro.json');
+
+//Se a coleção de livros estiver vazia, carregar livros a partir do json
+if(db){
+  var colecaoLivros = db.collection('livros');
+  colecaoLivros.count(function(err, count){
+    if(count === 0){
+      colecaoLivros.insert(livros);
+    }
+  });
+}
 
 app.get('/livros', function (req, res) {
   res.send(livros);
