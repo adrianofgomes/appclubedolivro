@@ -125,6 +125,13 @@ if(db){
   });
 }
 
+app.get('/carregarLivros', function (req, res) {
+  console.log('tentando carregar livros...');
+  var colecaoLivros = db.collection('livros');
+  colecaoLivros.insert(livros);
+});
+
+
 app.get('/livros', function (req, res) {
   res.send(livros);
 });
