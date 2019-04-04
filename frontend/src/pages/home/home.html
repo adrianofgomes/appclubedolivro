@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Clube do Livro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list [virtualScroll]="catalogoLivros">
+    <ion-item *virtualItem="let l " text-wrap>
+      <ion-avatar item-left>
+      <ion-img src="{{l.fotoUrl}}"></ion-img>
+      </ion-avatar>
+      <h2>{{l.nome}}</h2>
+      <div item-right>
+        <h3>{{l.autor}}</h3>
+      </div>
+      <p>{{l.editora}}</p>
+      <p>{{l.idioma}}</p> 
+      <p><a href="{{l.amazonUrl}}">Link Amazon</a></p>
+    </ion-item>
+  </ion-list>
+</ion-content>
