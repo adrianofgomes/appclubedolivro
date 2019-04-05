@@ -8,7 +8,8 @@ Back end: NodeJS + MongoDB
 
 Front end: Ionic 3
 
-Hospedagem: Azure
+Hospedagem: Openshift
+URL atual: http://nodejs-mongo-persistent-app-clube-livro.7e14.starter-us-west-2.openshiftapps.com/
 
 Funcionalidades:
 - Listagem de livros
