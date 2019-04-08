@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "App Clube do Livro",
+  "short_name": "Clube do Livro",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
