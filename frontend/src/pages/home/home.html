@@ -19,7 +19,7 @@
       </div>
       <p>{{l.editora}}</p>
       <p>{{l.idioma}}</p> 
-      <p><a href="{{l.amazonUrl}}">Link Amazon</a></p>
+      <div *ngIf="l.amazonUrl"><p><a href="{{l.amazonUrl}}">Link Amazon</a></p></div>
     </ion-item>
   </ion-list>
 </ion-content>

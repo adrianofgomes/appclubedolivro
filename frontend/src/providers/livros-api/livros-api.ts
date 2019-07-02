@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LivrosApi {
 
-  private livrosUrl = 'http://nodejs-mongo-persistent-app-clube-livro.7e14.starter-us-west-2.openshiftapps.com/livros';
+  private livrosUrl = 'https://us-central1-appclubedolivro.cloudfunctions.net/livros';
 
   constructor(public http: HttpClient) {
     console.log('Hello LivrosApi Provider');
