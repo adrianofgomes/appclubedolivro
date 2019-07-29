@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Clube do Livro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-virtual-scroll [items]="catalogoLivros" approxItemHeight="63px">
+    <ion-item *virtualItem="let l" (click)="detalhes(l)">
+      <ion-avatar slot="start">
+        <ion-img [src]="l.fotoUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <ion-text color="primary">
+            <h2>{{l.nome}}</h2>
+        </ion-text>
+        <ion-text>
+            <h4>{{l.autor}}</h4>
+        </ion-text>
+          <!--ion-text color="secondary">
+            <div *ngIf="l.amazonUrl"><h4><a href="{{l.amazonUrl}}">Link Amazon</a></h4></div>
+          </ion-text-->
+      </ion-label>
+      <ion-icon *ngIf="l.situacao == 'Disponível'" name="play" slot="end"></ion-icon>
+      <ion-icon *ngIf="l.situacao == 'Emprestado'" name="close" slot="end"></ion-icon>
+    </ion-item>
+  </ion-virtual-scroll>
+</ion-content>
