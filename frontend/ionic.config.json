@@ -1,6 +1,8 @@
 {
   "name": "appClubeDoLivro",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "id": "b164c128"
 }

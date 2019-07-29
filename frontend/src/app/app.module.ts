@@ -10,10 +10,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LivrosApi } from '../providers/livros-api/livros-api';
 import { HttpModule } from '@angular/http';
+import { LoginPage } from '../pages/login/login';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
     HomePage,
     ListPage
   ],
@@ -25,12 +28,14 @@ import { HttpModule } from '@angular/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
     HomePage,
     ListPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LivrosApi
   ]

@@ -1,0 +1,23 @@
+<!--
+  Página para registro de usuário e login. Não será necessário senha inicialmente.
+  Novos e-mails informados serão automaticamente criados como novos usuários e autenticados sem necessidade de senha.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="userInfo.nome"></ion-input>
+    </ion-item>
+      <ion-item>
+      <ion-label floating>E-mail</ion-label>
+      <ion-input type="text" [(ngModel)]="userInfo.email"></ion-input>
+    </ion-item>
+    <button ion-button block (click)="entrar()">Entrar</button>
+  </ion-list>
+</ion-content>
