@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LivrosAPIService } from '../livros-api.service';
+import { LivrosAPIService } from '../api/livros-api.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
